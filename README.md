@@ -1,6 +1,6 @@
 # Awesome-Identity-Provider-SSO-Integration
 
-# Top Identity Management & Access Governance
+## Top Identity Management & Access Governance
 **Curated List of SaaS Products & Open-Source GitHub Projects**
 
 *Focused on Identity Governance and Administration (IGA), Access Governance, Identity Lifecycle Management, Role Management & Compliance*
