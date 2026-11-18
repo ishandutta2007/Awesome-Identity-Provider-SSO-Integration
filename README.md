@@ -3,7 +3,7 @@
 
 # Awesome-Identity-Provider-SSO-Integration
 
-# Top Identity Provider SSO Integration Ecosystem
+## Top Identity Provider SSO Integration Ecosystem
 
 **Curated List of SaaS Products & Open-Source GitHub Projects**  
 *Focused on Single Sign-On (SSO), Identity & Access Management (IAM), SAML, OIDC & OAuth2 Integrations*  
