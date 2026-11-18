@@ -1,0 +1,236 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0.9" />
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9" />
+    </linearGradient>
+
+    <!-- Filters for Glow -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="pulseGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Pattern Grid -->
+    <pattern id="techGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.7" stroke-opacity="0.4" />
+      <circle cx="40" cy="40" r="1.5" fill="#475569" fill-opacity="0.6" />
+    </pattern>
+
+    <style>
+      .orb-1 {
+        animation: floatOrb1 10s ease-in-out infinite alternate;
+      }
+      .orb-2 {
+        animation: floatOrb2 12s ease-in-out infinite alternate;
+      }
+      .flow-line {
+        stroke-dasharray: 8 12;
+        animation: dashFlow 20s linear infinite;
+      }
+      .flow-line-reverse {
+        stroke-dasharray: 6 10;
+        animation: dashFlowRev 15s linear infinite;
+      }
+      .pulse-node {
+        animation: pulseNode 3s ease-in-out infinite alternate;
+      }
+      .beacon {
+        animation: beaconPing 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+        transform-origin: center;
+      }
+      .pill-float-1 {
+        animation: floatPill1 6s ease-in-out infinite alternate;
+      }
+      .pill-float-2 {
+        animation: floatPill2 7s ease-in-out infinite alternate;
+      }
+      .pill-float-3 {
+        animation: floatPill3 8s ease-in-out infinite alternate;
+      }
+
+      @keyframes dashFlow {
+        from { stroke-dashoffset: 400; }
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes dashFlowRev {
+        from { stroke-dashoffset: 0; }
+        to { stroke-dashoffset: 400; }
+      }
+      @keyframes floatOrb1 {
+        0% { transform: translate(0px, 0px) scale(1); }
+        100% { transform: translate(60px, 40px) scale(1.15); }
+      }
+      @keyframes floatOrb2 {
+        0% { transform: translate(0px, 0px) scale(1); }
+        100% { transform: translate(-50px, -30px) scale(1.1); }
+      }
+      @keyframes pulseNode {
+        0% { r: 4px; opacity: 0.6; }
+        100% { r: 6.5px; opacity: 1; filter: drop-shadow(0 0 6px #38bdf8); }
+      }
+      @keyframes beaconPing {
+        0% { r: 6px; opacity: 0.9; }
+        70% { r: 18px; opacity: 0; }
+        100% { r: 18px; opacity: 0; }
+      }
+      @keyframes floatPill1 {
+        0% { transform: translateY(0px); }
+        100% { transform: translateY(-8px); }
+      }
+      @keyframes floatPill2 {
+        0% { transform: translateY(0px); }
+        100% { transform: translateY(-10px); }
+      }
+      @keyframes floatPill3 {
+        0% { transform: translateY(0px); }
+        100% { transform: translateY(-7px); }
+      }
+    </style>
+  </defs>
+
+  <!-- Deep Canvas Background -->
+  <rect width="1200" height="420" rx="16" fill="url(#bgGrad)" />
+
+  <!-- Animated Ambient Orbs in Deep Background -->
+  <g opacity="0.35">
+    <circle class="orb-1" cx="200" cy="90" r="140" fill="#38bdf8" filter="url(#pulseGlow)" />
+    <circle class="orb-2" cx="1020" cy="320" r="160" fill="#818cf8" filter="url(#pulseGlow)" />
+    <circle class="orb-1" cx="950" cy="80" r="100" fill="#c084fc" filter="url(#pulseGlow)" />
+  </g>
+
+  <!-- Technical Grid Overlay -->
+  <rect width="1200" height="420" rx="16" fill="url(#techGrid)" />
+
+  <!-- Dynamic Cyber Mesh / Data Highway (Kept subtle and behind text) -->
+  <g opacity="0.45">
+    <!-- Curved SSO Token Flow Lines -->
+    <path class="flow-line" d="M -50 210 Q 300 70 600 210 T 1250 210" fill="none" stroke="#38bdf8" stroke-width="1.8" />
+    <path class="flow-line-reverse" d="M -50 250 Q 350 370 650 240 T 1250 230" fill="none" stroke="#818cf8" stroke-width="1.5" />
+    <path class="flow-line" d="M 100 -50 Q 350 280 600 120 T 1150 450" fill="none" stroke="#c084fc" stroke-width="1.2" opacity="0.7" />
+
+    <!-- Identity Federation Gateway Nodes -->
+    <circle cx="280" cy="140" r="5" fill="#38bdf8" class="pulse-node" />
+    <circle cx="280" cy="140" r="6" fill="none" stroke="#38bdf8" stroke-width="1.5" class="beacon" />
+
+    <circle cx="920" cy="150" r="5" fill="#818cf8" class="pulse-node" />
+    <circle cx="920" cy="150" r="6" fill="none" stroke="#818cf8" stroke-width="1.5" class="beacon" />
+
+    <circle cx="500" cy="330" r="4.5" fill="#c084fc" class="pulse-node" />
+    <circle cx="750" cy="320" r="4.5" fill="#38bdf8" class="pulse-node" />
+  </g>
+
+  <!-- Decorative Identity Shield Icon Behind Central Title (Subtle Glass Badge) -->
+  <g transform="translate(600, 75)" text-anchor="middle">
+    <!-- Subtle Shield Emblem -->
+    <path d="M 0 -35 L 26 -22 L 26 10 C 26 27 12 40 0 46 C -12 40 -26 27 -26 10 L -26 -22 Z" 
+          fill="url(#shieldGrad)" opacity="0.85" filter="url(#glow)"/>
+    <!-- Lock Keyhole Motif inside Shield -->
+    <circle cx="0" cy="6" r="5" fill="#0f172a" />
+    <path d="M -2.5 9 L 2.5 9 L 4 19 L -4 19 Z" fill="#0f172a" />
+  </g>
+
+  <!-- Central Foreground Content: High Contrast & Protected Layer -->
+  <g id="foreground-content">
+    <!-- Top Pill: Category Identifier -->
+    <g transform="translate(600, 142)">
+      <rect x="-160" y="-14" width="320" height="28" rx="14" fill="#1e293b" stroke="#475569" stroke-width="1.2" />
+      <text text-anchor="middle" y="4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#38bdf8" letter-spacing="1.8">
+        ENTERPRISE IAM &amp; IDENTITY FEDERATION
+      </text>
+    </g>
+
+    <!-- Main Title: Crisp, Clear & Prominent -->
+    <text x="600" y="202" text-anchor="middle" 
+          font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+          font-size="38" font-weight="800" fill="#ffffff" letter-spacing="-0.5">
+      Awesome Identity Provider &amp; SSO
+    </text>
+
+    <!-- Gradient Highlight Under Title -->
+    <rect x="420" y="216" width="360" height="3" rx="1.5" fill="url(#accentGrad)" />
+
+    <!-- Subtitle: High-Contrast Technical Overview -->
+    <text x="600" y="252" text-anchor="middle" 
+          font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+          font-size="16" font-weight="500" fill="#cbd5e1" letter-spacing="0.2">
+      Curated Directory of Cloud SaaS Identity Providers &amp; Open-Source IAM Solutions
+    </text>
+
+    <!-- Floating Interactive Protocol Badges / Pills (Dynamic Animated, Positioned cleanly at bottom) -->
+    <!-- Pill 1: SAML 2.0 -->
+    <g class="pill-float-1" transform="translate(240, 310)">
+      <rect x="-65" y="-17" width="130" height="34" rx="17" fill="url(#cardGrad)" stroke="#38bdf8" stroke-width="1.2" filter="url(#glow)"/>
+      <circle cx="-42" cy="0" r="4.5" fill="#38bdf8" />
+      <text x="5" y="5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#f8fafc">
+        SAML 2.0
+      </text>
+    </g>
+
+    <!-- Pill 2: OpenID Connect -->
+    <g class="pill-float-2" transform="translate(420, 310)">
+      <rect x="-75" y="-17" width="150" height="34" rx="17" fill="url(#cardGrad)" stroke="#818cf8" stroke-width="1.2" filter="url(#glow)"/>
+      <circle cx="-50" cy="0" r="4.5" fill="#818cf8" />
+      <text x="6" y="5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#f8fafc">
+        OIDC &amp; OAuth2
+      </text>
+    </g>
+
+    <!-- Pill 3: SCIM 2.0 -->
+    <g class="pill-float-3" transform="translate(600, 310)">
+      <rect x="-65" y="-17" width="130" height="34" rx="17" fill="url(#cardGrad)" stroke="#a855f7" stroke-width="1.2" filter="url(#glow)"/>
+      <circle cx="-42" cy="0" r="4.5" fill="#c084fc" />
+      <text x="5" y="5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#f8fafc">
+        SCIM 2.0
+      </text>
+    </g>
+
+    <!-- Pill 4: Zero Trust & Passkeys -->
+    <g class="pill-float-1" transform="translate(780, 310)">
+      <rect x="-78" y="-17" width="156" height="34" rx="17" fill="url(#cardGrad)" stroke="#ec4899" stroke-width="1.2" filter="url(#glow)"/>
+      <circle cx="-54" cy="0" r="4.5" fill="#f472b6" />
+      <text x="6" y="5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#f8fafc">
+        FIDO2 / Passkeys
+      </text>
+    </g>
+
+    <!-- Pill 5: Self-Hosted -->
+    <g class="pill-float-2" transform="translate(960, 310)">
+      <rect x="-65" y="-17" width="130" height="34" rx="17" fill="url(#cardGrad)" stroke="#10b981" stroke-width="1.2" filter="url(#glow)"/>
+      <circle cx="-42" cy="0" r="4.5" fill="#34d399" />
+      <text x="5" y="5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#f8fafc">
+        Self-Hosted
+      </text>
+    </g>
+
+    <!-- Footer Stats / Tagline within Banner -->
+    <text x="600" y="380" text-anchor="middle" 
+          font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+          font-size="12" font-weight="600" fill="#64748b" letter-spacing="1.2">
+      ⚡ B2B ENTERPRISE SSO • ZERO-TRUST IDENTITY FEDERATION • CLOUD &amp; HYBRID
+    </text>
+  </g>
+</svg>
